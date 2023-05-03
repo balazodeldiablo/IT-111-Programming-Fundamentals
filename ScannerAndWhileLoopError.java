@@ -21,7 +21,6 @@ public class ScannerAndWhileLoopError {
                 total += grade;
             }
             i++;
-            // I used i++ at the end of this loop to avoid the "counter -= 1" syntax. 
         }
 
         String message;
