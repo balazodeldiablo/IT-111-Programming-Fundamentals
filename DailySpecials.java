@@ -76,39 +76,39 @@ public class DailySpecials {
 
         quantity = input.nextInt();
         total = price * quantity;
+        run = true;
 
-        while (!run) {
+        while (run) {
 
             if (quantity < 0) {
                 System.out.println("That's not a valid input. Use positive integers only.");
                 quantity = input.nextInt();
             } else if (quantity == 0) {
                 System.out.println("Oop! Looks like you dont like coffee!");
-                run = true;
+                run = false;
             } else if (quantity == 1) {
                 System.out.println("Looks like you'll be ordering " + quantity + " " + coffee + ". The total for your order is: ");
                 System.out.printf("$%.2f.%n", total);
-                run = true;
+                run = false;
             } else {
 
                 System.out.print("That is " + quantity + " " + coffee + "s. The total for your order is ");
                 System.out.printf("$%.2f.%n", total);
 
                 if (quantity > 1 && quantity < 5) {
-                    run = true;
+                    run = false;
 
                 } else if (quantity >= 5 && quantity < 10) {
                     System.out.print("We have a 10% discount promotion on orders over 5 items!! Your new total is: ");
                     total *= 0.9;
                     System.out.printf("$%.2f.%n", total);
-                    run = true;
+                    run = false;
 
                 } else if (quantity >=10) {
                     System.out.print("We have a 20% discount promotion on orders over 10 items!! Your new total is: ");
                     total *= 0.8;
                     System.out.printf("$%.2f.%n", total);
-                    run = true;
-
+                    run = false;
                 }
             }
         }
